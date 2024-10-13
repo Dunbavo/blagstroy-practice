@@ -1,0 +1,50 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
+    "assets-webpack-plugin": "^7.1.1",
+    "autoprefixer": "^10.4.16",
+    "babel-loader": "^9.1.3",
+    "browser-sync": "^2.29.3",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-hot-loader": "^1.4.4",
+    "css-loader": "^6.8.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "cssnano": "^6.0.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^9.3.0",
+    "prettier": "^3.3.3",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "terser-webpack-plugin": "^5.3.9",
+    "webpack": "^5.89.0",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-hot-middleware": "^2.25.4"
+  },
+  "name": "new-project.ru",
+  "version": "1.2.0",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.28",
+    "inputmask": "^5.0.8",
+    "loading-attribute-polyfill": "^2.1.1",
+    "lodash": "^4.17.21",
+    "mustache": "^4.2.0",
+    "whatwg-fetch": "^3.6.19"
+  },
+  "repository": "http://gitea.fvds.ru:3200/z-labs/skeleton",
+  "author": "Mansurov Nazar <n.mansurov@z-labs.ru>",
+  "scripts": {
+    "build": "node ./helpers/set-env.js production && webpack --config webpack.production.config.js --progress",
+    "start": "node ./helpers/set-env.js && webpack-dev-server",
+    "stats": "webpack --config webpack.stats.config.js --progress"
+  }
+}

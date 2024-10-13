@@ -1,0 +1,88 @@
+@import '../../variables/variables'
+@import '../../mixins/mixins'
+@import '../../custom-fancybox/custom-fancybox'
+
+*,
+*:before,
+*:after
+  box-sizing: border-box
+
+a
+  +link-preset
+
+ul
+  +list-preset
+
+button
+  +button-preset
+
+input,
+textarea
+  +input-preset
+
+.link-as-card
+  +absoluteFluid
+
+.page
+  margin: 0
+  padding: 0
+  color: $main-color
+  background-color: #fff
+  font-size: 16px
+  font-family: $default-font
+  font-weight: normal
+  font-style: normal
+  line-height: 1.25
+
+.page-inner
+  min-height: 100vh
+  position: relative
+  display: flex
+  flex-direction: column
+
+.clearfix
+  +clearfix()
+
+.mobile
+  &-hide
+    display: none
+  &-show
+    display: inline
+
++mq(tablet, max)
+  .tablet-only
+    display: none
+
++mq(tablet)
+  .tablet
+    &-hide
+      display: none
+    &-show
+      display: inline
+    &-only
+      display: block
+    &-block
+      display: block
+
++mq(desktop, max)
+  .desktop-only
+    display: none
+
++mq(desktop)
+  .tablet-only
+    display: none
+
+  .desktop
+    &-hide
+      display: none
+    &-show
+      display: inline
+
+.animate
+  transition: 0.3s
+  &:not(.loaded)
+    opacity: 0
+
+
+@import "../../button/button"
+@import "../../container/container"
