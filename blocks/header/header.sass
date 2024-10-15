@@ -1,0 +1,35 @@
+@import '../header-contacts/header-contacts'
+@import '../header-menu-list/header-menu-list'
+
+.header
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding-top: 23px
+  padding-bottom: 19px
+
+.header-logo-wrap
+  max-width: 230px
+  line-height: 0
+
+.header__logo
+  width: 100%
+  height: 100%
+  margin-right: 15px
+
+.header-contacts
+  display: none
+
+.header-link
+  display: none
+
+.header-menu-content
+  display: none
+
++mq(tablet)
+  .header-contacts
+    display: block
+
++mq(desktop)
+
++mq(wide-screen)

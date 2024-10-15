@@ -1,0 +1,19 @@
+{{#items.isNotEmpty}}
+    <div class="header-contacts">
+        {{#items}}
+            <div class="header-contacts-item">
+                {{#title}}
+                    <div class="header-contacts-item__title">{{{.}}}</div>
+                {{/title}}
+                {{#icon.inline}}
+                    <div class="header-contacts-item__icon">
+                        {{{.}}}
+                    </div>
+                {{/icon.inline}}
+                {{#link}}
+                    <a href="{{href}}" class="header-contacts-item__link">{{text}}</a>
+                {{/link}}
+            </div>
+        {{/items}}
+    </div>
+{{/items.isNotEmpty}}

@@ -10,7 +10,7 @@ $pageConfig = [
     'meta' => [
         'title' => 'new-project.ru: Главная',
     ],
-    'title' => 'new-project.ru: Главная',
+    'title' => 'new-project.ru: Благовещенскстрой',
     'isMainPage' => true,
     'mainClass' => 'index',
     'inlineCss' => collect([

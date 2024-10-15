@@ -1,6 +1,8 @@
 import loadingAttributePolyfill from 'loading-attribute-polyfill/dist/loading-attribute-polyfill.module'
 import 'fonts/stylesheet.css'
 
+import './templates'
+
 import './common.sass'
 
 window.loadingAttributePolyfill = loadingAttributePolyfill
