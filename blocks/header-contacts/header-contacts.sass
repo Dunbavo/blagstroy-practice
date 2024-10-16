@@ -1,5 +1,53 @@
 +mq(tablet)
+  .header-contacts-item_mail
+    display: none
+
+  .header-contacts-item__title
+    font-size: 10px
+    font-weight: 500
+    line-height: 12px
+    letter-spacing: 0.1em
+    text-transform: uppercase
+    color: $main-color50
+    margin-bottom: 3px
+
+  .header-contacts-item__icon
+    display: none
+    flex-shrink: 0
+
+  .header-contacts-item__link
+    font-size: 20px
+    font-weight: 500
+    line-height: 24px
+    color: $black-color
 
 +mq(desktop)
+  .header-contacts-item
+    margin-right: 38px
+    &:last-child
+      margin-right: 0
+
+  .header-contacts-item_mail
+    display: block
+
+  .header-contacts-item-value
+    display: flex
+    align-items: center
+
+  .header-contacts-item-value
+    +svg
+
+  .header-contacts-item__title
+    display: none
+
+  .header-contacts-item__icon
+    display: block
+    margin-right: 18px
+    +svg
+
+  .header-contacts-item__link
+    font-size: 17px
+    line-height: 20px
+    letter-spacing: 0.04em
 
 +mq(wide-screen)
