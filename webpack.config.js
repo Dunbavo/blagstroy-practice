@@ -76,6 +76,7 @@ module.exports = {
               api: 'modern',
               sourceMap: true,
               sassOptions: {
+                silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin', 'color-functions'],
                 syntax: 'indented'
               }
             },
