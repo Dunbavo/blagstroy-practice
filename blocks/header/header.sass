@@ -42,6 +42,19 @@
     margin: 0 auto 0 96px
 
 +mq(desktop)
+  @keyframes ripple
+    0%
+      transform: scale(0, 0)
+      opacity: 1
+
+    20%
+      transform: scale(25, 25)
+      opacity: 1
+
+    100%
+      opacity: 0
+      transform: scale(40, 40)
+
   .header
     flex-direction: column
     align-items: flex-start
@@ -65,6 +78,7 @@
     margin: 0 60px 0 auto
 
   .header-link
+    position: relative
     display: block
     font-size: 16px
     font-weight: 600
@@ -76,7 +90,24 @@
     background: linear-gradient(135deg, #FFC92C 0%, #FFBF06 100%)
     max-width: 248px
     width: 100%
+    transition: $default-transition
     padding: 17px
+
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 5px
+      height: 5px
+      background: rgba(255, 255, 255, .5)
+      opacity: 0
+      border-radius: 100%
+      transform: scale(1, 1) translate(-50%)
+      transform-origin: 50% 50%
+
+    &:focus:not(:active)::after
+      animation: ripple 1s ease-out
 
   .header-bottom
     width: 100%
