@@ -1,2 +1,2 @@
 import '../header-contacts/header-contacts.mustache'
-import '../header-menu-list/header-menu-list.mustache'
+import '../header-menu/header-menu.mustache'

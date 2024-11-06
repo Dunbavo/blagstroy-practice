@@ -1,0 +1,30 @@
+{{#items.isNotEmpty}}
+    <div class="header-menu">
+        <div class="header-menu-items">
+            {{#items}}
+                <div class="header-menu-item-wrap{{#submenu.isNotEmpty}} header-menu-item-wrap_parent{{/submenu.isNotEmpty}}">
+                    <a href="{{href}}" class="header-menu-item{{#active}} header-menu-item_active{{/active}}"{{#targetBlank}} target="_blank"{{/targetBlank}}>
+                        {{{text}}}
+                        {{#icon}}
+                            <span class="header-menu-item__icon">{{{inline}}}</span>
+                        {{/icon}}
+                    </a>
+                    {{#submenu.isNotEmpty}}
+                        <div class="header-menu-submenu-wrap">
+                            <div class="header-menu-submenu">
+                                <div class="header-menu-submenu-list header-submenu-list">
+                                    {{#submenu}}
+                                        <a href="{{href}}" class="header-submenu-item{{#active}} header-submenu-item_active{{/active}}">
+                                            {{{text}}}
+                                        </a>
+                                    {{/submenu}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/submenu.isNotEmpty}}
+                </div>
+            {{/items}}
+        </div>
+    </div>
+{{/items.isNotEmpty}}
+

@@ -1,0 +1,53 @@
+.header-menu-items
+  display: flex
+  align-items: center
+  border-bottom: 2px solid transparent
+
+.header-menu-item-wrap
+  position: relative
+
+.header-menu-item
+  display: flex
+  align-items: center
+  width: auto
+  font-size: 16px
+  font-weight: 500
+  line-height: 19px
+  letter-spacing: 0.05em
+  color: $black-color
+  border-bottom: 2px solid transparent
+  transition: $default-transition
+  padding: 31px 60px 28px 0
+  &:hover
+    border-color: $yellow-color
+
+.header-menu-item_active
+  border-color: $yellow-color
+
+.header-menu-item-wrap_parent:hover .header-menu-submenu-wrap
+  opacity: 1
+  visibility: visible
+
+.header-menu-item__icon
+  margin-left: 8px
+  +svg
+
+.header-menu-submenu-wrap
+  position: absolute
+  opacity: 0
+  visibility: hidden
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: $main-color50
+  transition: $default-transition
+
+.header-menu-submenu
+  position: fixed
+  width: 100%
+  background-color: #FD9999
+  padding: 18px 0 19px 0
+
+.header-submenu-list
+  display: flex
+  gap: 60px
