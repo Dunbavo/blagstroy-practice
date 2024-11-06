@@ -108,7 +108,46 @@ return[
                     'text' => 'Документы',
                     'active' => false,
                 ],
-
+                [
+                    'href' => '#',
+                    'text' => 'История компании',
+                    'active' => false,
+                ],
+                [
+                    'href' => '#',
+                    'text' => 'Документы',
+                    'active' => false,
+                ],
+                [
+                    'href' => '#',
+                    'text' => 'История компании',
+                    'active' => false,
+                ],
+                [
+                    'href' => '#',
+                    'text' => 'Документы',
+                    'active' => false,
+                ],
+                [
+                    'href' => '#',
+                    'text' => 'История компании',
+                    'active' => false,
+                ],
+                [
+                    'href' => '#',
+                    'text' => 'Документы',
+                    'active' => false,
+                ],
+                [
+                    'href' => '#',
+                    'text' => 'История компании',
+                    'active' => false,
+                ],
+                [
+                    'href' => '#',
+                    'text' => 'Документы',
+                    'active' => false,
+                ],
             ])
         ],
         [
