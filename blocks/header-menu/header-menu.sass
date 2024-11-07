@@ -7,26 +7,28 @@
   position: relative
 
 .header-menu-item
-  display: flex
+  display: inline-flex
   align-items: center
   width: auto
   font-size: 16px
   font-weight: 500
   line-height: 19px
   letter-spacing: 0.05em
-  color: $black-color
+  color: transparentize($black-color, .2)
   border-bottom: 2px solid transparent
   transition: $default-transition
   padding: 31px 60px 28px 0
   &:hover
+    color: $black-color
     border-color: $yellow-color
 
 .header-menu-item_active
   border-color: $yellow-color
 
-.header-menu-item-wrap_parent:hover .header-menu-submenu-wrap
-  opacity: 1
-  visibility: visible
+.header-menu-item-wrap_parent:hover
+  .header-menu-submenu-wrap
+    opacity: 1
+    visibility: visible
 
 .header-menu-item__icon
   margin-left: 8px
@@ -36,7 +38,6 @@
   position: absolute
   opacity: 0
   visibility: hidden
-  background-color: $main-color50
   transition: $default-transition
 
 .header-menu-submenu
@@ -44,15 +45,25 @@
   left: 0
   right: 0
   width: 100%
-  background-color: #FD9999
+  border-top: 1px solid $grey-color
+  transition: $default-transition
   padding: 18px 0 19px 0
 
 .header-submenu-list
   display: flex
   flex-wrap: wrap
-  gap: 60px
+  gap: 20px 60px
+  font-size: 16px
+  font-weight: 500
+  line-height: 19px
+  letter-spacing: 0.05em
+  transition: $default-transition
+  color: transparentize($black-color, .4)
 
 .header-submenu-item
   display: flex
   align-items: center
   width: auto
+  transition: $default-transition
+  &:hover
+    color: transparentize($black-color, .2)
