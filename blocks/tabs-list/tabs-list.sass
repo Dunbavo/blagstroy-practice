@@ -1,0 +1,72 @@
+.tabs-list
+  margin-top: 30px
+
+.tabs-list-title
+  font-size: 24px
+  font-weight: 800
+  line-height: 29px
+  margin-bottom: 24px
+
+.tabs-list-links
+  position: relative
+  font-size: 15px
+  font-weight: 700
+  line-height: 18px
+  text-transform: uppercase
+  color: $main-color50
+  padding-bottom: 19px
+
+.tabs-list-link
+  cursor: pointer
+  margin-right: 20px
+
+.tabs-list-panels
+  transition: $default-transition
+
+.tabs-list-panel
+  padding-top: 30px
+  display: none
+  opacity: 0
+  visibility: hidden
+  transition: $default-transition
+
+  &_active
+    display: block
+
+  &_in
+    opacity: 1
+    visibility: visible
+    transition: visibility $default-transition, opacity $default-transition $default-transition
+
++mq(tablet)
+  .tabs-list
+    margin-top: 40px
+
+  .tabs-list-links
+    display: flex
+    font-size: 16px
+    padding-bottom: 20px
+
+  .tabs-list-link
+    &_active
+      border-bottom: 2px solid $yellow-color
+      cursor: default
+
+  .tabs-list-panel
+    padding-top: 25px
+
++mq(desktop)
+  .tabs-list
+    max-width: 1195px
+    margin-top: 50px
+
+  .tabs-list-links
+    font-size: 18px
+    padding-bottom: 0
+    margin-right: -$co3
+
+  .tabs-list-panel
+    padding-top: 40px
+
+  .tabs-list-link:not(.tabs-list-link_active):hover
+    color: #FFBF06
