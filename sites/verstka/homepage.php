@@ -31,7 +31,7 @@ $pageConfig = [
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/header.php');
 ?>
 <div class="container">
-    <?= $mustache->render('tabs-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/tabs/tabs-list.php'); ?>
+    <?= $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php'); ?>
 </div>
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/footer.php');

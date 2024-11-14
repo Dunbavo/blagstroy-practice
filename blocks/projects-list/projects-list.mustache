@@ -1,0 +1,65 @@
+{{#items.isNotEmpty}}
+    <div class="projects-list">
+        <div class="projects-list__title">{{{title}}}</div>
+        {{#tabs}}
+            {{> tabs-list }}
+        {{/tabs}}
+        {{#items}}
+            <div class="projects-list-card">
+                {{#image}}
+                    <div class="projects-list-card-image">
+                        <picture class="projects-list-card-picture">
+                            {{#mdSrc}}
+                                <source media="(max-width: 767px)" srcset="{{.}} 2x, {{.}}">
+                            {{/mdSrc}}
+                            {{#lgSrc}}
+                                <source media="(max-width: 1279px)" srcset="{{.}} 2x, {{.}}">
+                            {{/lgSrc}}
+                            <img src="{{src}}"
+                                 alt="{{alt}}"
+                                {{#width}} width="{{.}}"{{/width}}
+                                {{#height}} height="{{.}}"{{/height}}
+                                 class="projects-list-card__img"
+                                 loading="lazy">
+                        </picture>
+                    </div>
+                {{/image}}
+                {{#content}}
+                    <div class="projects-list-card-content">
+                    <div class="projects-list-card__name">{{{name}}}</div>
+                    {{#description}}
+                        <div class="projects-list-card__name">{{{ю}}}</div>
+                    {{/description}}
+                    {{#link}}
+                        <a href="{{href}}" class="projects-list-card__link">{{text}}</a>
+                    {{/link}}
+                    {{#date}}
+                        <div class="projects-list-card__release-date">
+                            {{#title}}
+                                <div class="projects-list-card-release-date__title">{{.}}</div>
+                            {{/title}}
+                            <div class="projects-list-card-release-date__text">{{text}}</div>
+                        </div>
+                    {{/date}}
+                    {{#chars.isNotEmpty}}
+                        <div class="projects-list-card__chars">
+                            {{#chars}}
+                                <div class="projects-list-card-chars-item">
+                                    {{#title}}
+                                        <div class="projects-list-card-chars__title">{{.}}</div>
+                                    {{/title}}
+                                    <div class="projects-list-card-chars__text">{{{text}}}</div>
+                                    {{#desc}}
+                                        <div class="projects-list-card-chars__desc">{{{.}}}</div>
+                                    {{/desc}}
+                                </div>
+                            {{/chars}}
+                        </div>
+                    {{/chars.isNotEmpty}}
+                </div>
+                {{/content}}
+                <a href="{{link}}" class="link-as-card"></a>
+            </div>
+        {{/items}}
+    </div>
+{{/items.isNotEmpty}}
