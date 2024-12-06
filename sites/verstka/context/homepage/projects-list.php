@@ -1,14 +1,21 @@
 <?php
 
-ob_start();
-include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/tabs/tabs-list.php';
-$tabs = ob_get_clean();
+use ZLabs\BxMustache\AdaptiveImage;
+use ZLabs\Frontend\MustacheSingleton;
+
+$mustache = MustacheSingleton::getInstance();
+
+$image1 = new AdaptiveImage();
+$image1->alt = 'Многоквартирный дом, Литер 5';
+$image1->mdSrc = '/local/assets/images/temp/projects-list/image-project-1-mobile.jpg';
+$image1->src = '/local/assets/images/temp/projects-list/image-project-1-tablet.jpg';
 
 return [
     'title' => 'Проекты компании',
-    'tabs' => $tabs,
+    'tabs' =>  $mustache->render('tabs-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/tabs/tabs-list.php'),
     'items' => collect([
         [
+            'image' => $image1,
             'content' => [
                 'name' => 'Многоквартирный дом, Литер 5',
                 'description' => 'район СХПК «Тепличный»',

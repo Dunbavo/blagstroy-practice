@@ -5,7 +5,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/tabs/content.php';
 $content = ob_get_clean();
 
 return [
-    'title' => 'Проекты компании',
     'tabs' => collect([
         [
             'id' => 'apartments',

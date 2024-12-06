@@ -1,8 +1,5 @@
 {{#tabs.isNotEmpty}}
   <div class="tabs-list">
-    {{#title}}
-        <div class="tabs-list-title">{{{.}}}</div>
-    {{/title}}
     <div class="tabs-list-links">
       {{#tabs}}
         <div class="tabs-list-link{{#active}} tabs-list-link_active{{/active}}" data-tab="{{id}}">{{name}}</div>
