@@ -1,63 +1,77 @@
 {{#items.isNotEmpty}}
     <div class="projects-list">
-        <div class="projects-list__title">{{{title}}}</div>
-        {{{tabs}}}
-        {{#items}}
-            <div class="projects-list-card">
-                {{#image}}
-                    <div class="projects-list-card-image-wrap">
-                        <div class="projects-list-card-image">
-                            <picture class="projects-list-card-picture">
-                                {{#mdSrc}}
-                                    <source media="(max-width: 767px)" srcset="{{.}} 2x, {{.}}">
-                                {{/mdSrc}}
-                                <img src="{{src}}"
-                                     alt="{{alt}}"
-                                    {{#width}} width="{{.}}"{{/width}}
-                                    {{#height}} height="{{.}}"{{/height}}
-                                     class="projects-list-card__img"
-                                     loading="lazy">
-                            </picture>
+        <div class="projects-list-items">
+            {{#items}}
+                <div class="projects-list-card">
+                    {{#image}}
+                        <div class="projects-list-card-image-wrap">
+                            <div class="projects-list-card-image">
+                                <picture class="projects-list-card-picture">
+                                    {{#mdSrc}}
+                                        <source media="(max-width: 767px)" srcset="{{.}} 2x, {{.}}">
+                                    {{/mdSrc}}
+                                    <img src="{{src}}"
+                                         alt="{{alt}}"
+                                        {{#width}} width="{{.}}"{{/width}}
+                                        {{#height}} height="{{.}}"{{/height}}
+                                         class="projects-list-card__img"
+                                         loading="lazy">
+                                </picture>
+                            </div>
                         </div>
-                    </div>
-                {{/image}}
-                {{#content}}
-                    <div class="projects-list-card-content">
-                    <div class="projects-list-card__name">{{{name}}}</div>
-                    {{#description}}
-                        <div class="projects-list-card__description">{{{.}}}</div>
-                    {{/description}}
-                    {{#link}}
-                        <a href="{{href}}" class="projects-list-card__link">{{text}}</a>
-                    {{/link}}
-                    {{#date}}
-                        <div class="projects-list-card__release-date">
-                            {{#title}}
-                                <div class="projects-list-card-release-date__title">{{.}}</div>
-                            {{/title}}
-                            <div class="projects-list-card-release-date__text">{{text}}</div>
-                        </div>
-                    {{/date}}
-                    {{#chars.isNotEmpty}}
-                        <div class="projects-list-card__chars">
-                            {{#chars}}
-                                <div class="projects-list-card-chars-item">
-                                    {{#title}}
-                                        <div class="projects-list-card-chars__title">{{.}}</div>
-                                    {{/title}}
-                                    <div class="projects-list-card-chars__text">{{{text}}}</div>
-                                    {{#desc}}
+                    {{/image}}
+                    {{#content}}
+                        <div class="projects-list-card-content">
+                        <div class="projects-list-card__name">{{{name}}}</div>
+                        {{#description}}
+                            <div class="projects-list-card__description">{{{.}}}</div>
+                        {{/description}}
+                        {{#link}}
+                            <a href="{{href}}" class="projects-list-card__link">{{text}}</a>
+                        {{/link}}
+                        {{#date}}
+                            <div class="projects-list-card__release-date">
+                                {{#title}}
+                                    <div class="projects-list-card-release-date__title">{{.}}</div>
+                                {{/title}}
+                                <div class="projects-list-card-release-date__text">{{text}}</div>
+                            </div>
+                        {{/date}}
+                        {{#chars.address}}
+                            <div class="projects-list-card__address">{{.}}</div>
+                        {{/chars.address}}
+                        {{#chars}}
+                            <div class="projects-list-card__chars">
+                                {{#type}}
+                                    <div class="projects-list-card-chars-item">
+                                        <div class="projects-list-card-chars__title">Тип</div>
                                         <div class="projects-list-card-chars__desc">{{{.}}}</div>
-                                    {{/desc}}
-                                </div>
-                            {{/chars}}
-                        </div>
-                    {{/chars.isNotEmpty}}
+                                    </div>
+                                {{/type}}
+                                {{#price}}
+                                    <div class="projects-list-card-chars-item">
+                                        <div class="projects-list-card-chars__title">Цена</div>
+                                        <div class="projects-list-card-chars__desc">{{{.}}}
+                                            {{#squareMeter}} <span>{{{.}}}</span>{{/squareMeter}}
+                                        </div>
+                                    </div>
+                                {{/price}}
+                                {{#address}}
+                                    <div class="projects-list-card-chars-item">
+                                        <div class="projects-list-card-chars__title">Адрес</div>
+                                        <div class="projects-list-card-chars__desc">{{{.}}}</div>
+                                    </div>
+                                {{/address}}
+                            </div>
+                        {{/chars}}
+                    </div>
+                    {{/content}}
+                    <a href="{{link}}" class="link-as-card"></a>
                 </div>
-                {{/content}}
-                <a href="{{link}}" class="link-as-card"></a>
-            </div>
-        {{/items}}
-        <button class="projects-list__button" type="button">Все проекты</button>
+            {{/items}}
+        </div>
+        {{#linkAll}}
+            <a href="{{.}}" class="projects-list__link">Все проекты</a>
+        {{/linkAll}}
     </div>
 {{/items.isNotEmpty}}

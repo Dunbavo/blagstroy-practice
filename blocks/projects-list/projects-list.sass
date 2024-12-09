@@ -1,23 +1,17 @@
-@import '../tabs-list/tabs-list'
-
-.projects-list
-  margin-top: 60px
-
-.projects-list__title
-  font-size: 24px
-  font-weight: 800
-  line-height: 29px
-  margin-bottom: 24px
+.projects-list-items
+  display: grid
+  gap: 30px
 
 .projects-list-card
   position: relative
   border-radius: 6px
   border: 1px solid #F2F2F2
+  box-shadow: 0 4px 4px 0 #00000014
 
 .projects-list-card-image-wrap
   line-height: 0
   position: relative
-  padding-bottom: 40%
+  padding-bottom: 81.6%
 
 .projects-list-card-image
   +absoluteFluid
@@ -26,6 +20,39 @@
   width: 100%
   height: 100%
   object-fit: cover
+  border-radius: 6px 6px 0 0
 
 .projects-list-card-content
   padding: 25px 25px 28px
+
+.projects-list-card__description,
+.projects-list-card__link,
+.projects-list-card-release-date__title,
+.projects-list-card__chars
+  display: none
+
+.projects-list-card__name
+  font-size: 16px
+  font-weight: 700
+  line-height: 18px
+  letter-spacing: 0.02em
+  margin-bottom: 25px
+
+.projects-list-card-release-date__text,
+.projects-list-card__address
+  font-size: 14px
+  font-weight: 600
+  line-height: 18px
+  letter-spacing: 0.02em
+
+.projects-list-card__release-date
+  margin-bottom: 13px
+
+.projects-list__link
+  display: inline-block
+  font-size: 16px
+  font-weight: 700
+  line-height: 16px
+  letter-spacing: 0.05em
+  border-bottom: 1px solid
+  margin-top: 30px

@@ -1,0 +1,17 @@
+{{#sections.isNotEmpty}}
+  <div class="section-list">
+    {{#title}}
+      <div class="section-list__title">{{{.}}}</div>
+    {{/title}}
+    <div class="section-list-tabs">
+      {{#sections}}
+        <div class="section-list-tab{{#active}} section-list-tab_active{{/active}}" data-tab="{{id}}">{{name}}</div>
+      {{/sections}}
+    </div>
+    <div class="section-list-panels">
+      {{#sections}}
+        <div class="section-list-panel" data-tab="{{id}}">{{{content}}}</div>
+      {{/sections}}
+    </div>
+  </div>
+{{/sections.isNotEmpty}}
