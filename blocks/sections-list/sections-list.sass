@@ -37,6 +37,59 @@
     visibility: visible
     transition: visibility $default-transition, opacity $default-transition $default-transition
 
+.section-list-dropdown
+  font-size: 14px
+  font-weight: 500
+  line-height: 17px
+  transition: $default-transition
+
+.section-list-dropdown-button
+  display: flex
+  justify-content: space-between
+  align-items: center
+  gap: 20px
+  transition: $default-transition
+  padding: 14px 20px 17px 23px
+
+.section-list-dropdown-button__icon
+  display: flex
+  transition: $default-transition
+
+.section-list-dropdown-button,
+.section-list-dropdown-menu
+  border: 1px solid transparentize($main-color, .8)
+  border-radius: 5px
+  box-shadow: 0 4px 40px 0 #00000012
+
+.section-list-dropdown-menu
+  opacity: 0
+  display: none
+  transition: $default-transition
+  margin-top: 6px
+
+.section-list-dropdown-menu-item
+  display: flex
+  cursor: pointer
+  padding: 14px 20px 17px 23px
+
+.section-list-dropdown-menu-item_active
+  background-color: #D4DEE180
+
+.section-list-dropdown_open
+  .section-list-dropdown-button__icon
+    transform: rotate(180deg)
+
+  .section-list-dropdown-menu
+    opacity: 1
+    display: block
+
+.section-list-dropdown-button-icon__rotate
+  transform: rotate(180deg)
+
+.section-list-dropdown-menu_visible
+  opacity: 1
+  display: block
+
 +mq(tablet)
   .tabs-list
     margin-top: 40px
@@ -69,3 +122,8 @@
 
   .tabs-list-link:not(.tabs-list-link_active):hover
     color: #FFBF06
+
+  .section-list-dropdown-menu-item
+    transition: $default-transition
+    &:hover
+      background-color: #D4DEE180

@@ -3,13 +3,13 @@ import './sections-list.mustache'
 import { Tab } from '../tab/Tab'
 
 export default () => {
-  const tabsEl = document.querySelector('.section-list')
+  const section = document.querySelector('.section-list')
   let tabsInstance = null
 
-  if (tabsEl) {
+  if (section) {
     tabsInstance = new Tab({
       selectors: {
-        tab: tabsEl,
+        tab: section,
         link: '.section-list-tab',
         panel: '.section-list-panel',
         panelContainer: '.section-list-panels'
@@ -22,6 +22,23 @@ export default () => {
       }
     })
   }
+
+  const dropdown = section.querySelector('.section-list-dropdown')
+  const dropdownItem = section.querySelector('.section-list-dropdown-menu-item')
+
+  dropdown.addEventListener('click', () => {
+    dropdown.classList.toggle('section-list-dropdown_open')
+  })
+
+  dropdownItem.forEach(item => {
+    item.addEventListener('click', () => {
+      dropdown.classList.remove('section-list-dropdown_open')
+      dropdownItem.forEach(item => {
+        item.classList.remove('section-list-dropdown-menu-item_active')
+      })
+      dropdownItem.classList.toggle('section-list-dropdown-menu-item_active')
+    })
+  })
 
   return tabsInstance
 }

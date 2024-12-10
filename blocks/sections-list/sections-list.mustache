@@ -13,5 +13,24 @@
         <div class="section-list-panel" data-tab="{{id}}">{{{content}}}</div>
       {{/sections}}
     </div>
+    {{#dropdown}}
+      <div class="section-list-dropdown">
+        <button class="section-list-dropdown-button" type="button">Показать все объекты
+            <span class="section-list-dropdown-button__icon">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.4003 0.884827C11.2205 0.705058 10.9299 0.705058 10.7502 0.884827L6.01756 5.61742L1.28496 0.884827C1.10519 0.705058 0.814597 0.705058 0.634827 0.884827C0.455058 1.0646 0.455058 1.35519 0.634827 1.53496L5.6925 6.59264C5.78216 6.6823 5.89986 6.72736 6.01758 6.72736C6.1353 6.72736 6.253 6.6823 6.34266 6.59264L11.4003 1.53496C11.5801 1.35519 11.5801 1.0646 11.4003 0.884827Z" fill="#342733" fill-opacity="0.8"/>
+                    <path d="M11.6478 0.63734L11.4009 0.884253L11.6478 0.63734C11.3313 0.320887 10.8191 0.320887 10.5027 0.63734L6.01756 5.12245L1.53245 0.63734C1.21599 0.320887 0.703793 0.320887 0.38734 0.63734C0.0708867 0.953793 0.0708866 1.46599 0.38734 1.78245L5.44501 6.84012C5.60279 6.99789 5.81059 7.07736 6.01758 7.07736C6.22457 7.07736 6.43237 6.99789 6.59014 6.84012L11.6478 1.78245L11.6478 1.78243C11.9642 1.46598 11.9642 0.95379 11.6478 0.63734Z" stroke="#342733" stroke-opacity="0.8" stroke-width="0.7"/>
+                </svg>
+            </span>
+        </button>
+        <ul class="section-list-dropdown-menu">
+          {{#items}}
+            <li class="section-list-dropdown-menu-item" data-value="{{id}}">{{name}}
+                <div class="section-list-dropdown-menu-item__content" data-value="{{id}}">{{{content}}}</div>
+            </li>
+          {{/items}}
+        </ul>
+      </div>
+    {{/dropdown}}
   </div>
 {{/sections.isNotEmpty}}

@@ -25,5 +25,24 @@ return [
             'active' => false,
             'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
         ],
-    ])
+    ]),
+    'dropdown' => [
+        'items' => [
+            [
+                'id' => 'apartments',
+                'name' => 'Квартиры',
+//                'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
+            ],
+            [
+                'id' => 'parking-spaces',
+                'name' => 'Машиноместа',
+//                'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
+            ],
+            [
+                'id' => 'commercial-real-estate',
+                'name' => 'Коммерческая недвижимость',
+//                'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
+            ],
+        ]
+    ]
 ];
