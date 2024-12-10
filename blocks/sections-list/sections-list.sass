@@ -8,17 +8,7 @@
   margin-bottom: 24px
 
 .section-list-tabs
-  position: relative
-  font-size: 15px
-  font-weight: 700
-  line-height: 18px
-  text-transform: uppercase
-  color: $main-color50
-  padding-bottom: 30px
-
-.section-list-tab
-  cursor: pointer
-  margin-right: 20px
+  display: none
 
 .section-list-panels
   transition: $default-transition
@@ -38,17 +28,18 @@
     transition: visibility $default-transition, opacity $default-transition $default-transition
 
 .section-list-dropdown
+  position: relative
   font-size: 14px
   font-weight: 500
   line-height: 17px
-  transition: $default-transition
+  margin-bottom: 30px
 
 .section-list-dropdown-button
   display: flex
   justify-content: space-between
   align-items: center
   gap: 20px
-  transition: $default-transition
+  width: 100%
   padding: 14px 20px 17px 23px
 
 .section-list-dropdown-button__icon
@@ -62,8 +53,12 @@
   box-shadow: 0 4px 40px 0 #00000012
 
 .section-list-dropdown-menu
+  position: absolute
   opacity: 0
   display: none
+  width: 100%
+  z-index: 1
+  background-color: #fff
   transition: $default-transition
   margin-top: 6px
 
@@ -83,45 +78,58 @@
     opacity: 1
     display: block
 
-.section-list-dropdown-button-icon__rotate
-  transform: rotate(180deg)
+  .section-list-dropdown-button-icon__rotate
+    transform: rotate(180deg)
 
-.section-list-dropdown-menu_visible
-  opacity: 1
-  display: block
+  .section-list-dropdown-menu_visible
+    opacity: 1
+    display: block
 
 +mq(tablet)
-  .tabs-list
-    margin-top: 40px
+  .section-list-tabs
+    position: relative
+    font-size: 15px
+    font-weight: 700
+    line-height: 18px
+    text-transform: uppercase
+    color: $main-color50
+    padding-bottom: 30px
 
-  .tabs-list-links
-    display: flex
-    font-size: 16px
-    padding-bottom: 20px
+  .section-list-tab
+    cursor: pointer
+    margin-right: 20px
 
-  .tabs-list-link
-    &_active
-      border-bottom: 2px solid $yellow-color
-      cursor: default
-
-  .tabs-list-panel
-    padding-top: 25px
+  //.tabs-list
+  //  margin-top: 40px
+  //
+  //.tabs-list-links
+  //  display: flex
+  //  font-size: 16px
+  //  padding-bottom: 20px
+  //
+  //.tabs-list-link
+  //  &_active
+  //    border-bottom: 2px solid $yellow-color
+  //    cursor: default
+  //
+  //.tabs-list-panel
+  //  padding-top: 25px
 
 +mq(desktop)
-  .tabs-list
-    max-width: 1195px
-    margin-top: 50px
-
-  .tabs-list-links
-    font-size: 18px
-    padding-bottom: 0
-    margin-right: -$co3
-
-  .tabs-list-panel
-    padding-top: 40px
-
-  .tabs-list-link:not(.tabs-list-link_active):hover
-    color: #FFBF06
+  //.tabs-list
+  //  max-width: 1195px
+  //  margin-top: 50px
+  //
+  //.tabs-list-links
+  //  font-size: 18px
+  //  padding-bottom: 0
+  //  margin-right: -$co3
+  //
+  //.tabs-list-panel
+  //  padding-top: 40px
+  //
+  //.tabs-list-link:not(.tabs-list-link_active):hover
+  //  color: #FFBF06
 
   .section-list-dropdown-menu-item
     transition: $default-transition

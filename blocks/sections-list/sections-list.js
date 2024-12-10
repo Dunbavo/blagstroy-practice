@@ -23,22 +23,26 @@ export default () => {
     })
   }
 
-  const dropdown = section.querySelector('.section-list-dropdown')
-  const dropdownItem = section.querySelector('.section-list-dropdown-menu-item')
+  const dropdown = section.querySelector('.section-list-dropdown');
+  const dropdownButtonText = section.querySelector('.section-list-dropdown-button__text');
+  const dropdownItems = section.querySelectorAll('.section-list-dropdown-menu-item');
 
-  dropdown.addEventListener('click', () => {
+  dropdown.addEventListener('click', (event) => {
     dropdown.classList.toggle('section-list-dropdown_open')
   })
 
-  dropdownItem.forEach(item => {
-    item.addEventListener('click', () => {
-      dropdown.classList.remove('section-list-dropdown_open')
-      dropdownItem.forEach(item => {
-        item.classList.remove('section-list-dropdown-menu-item_active')
-      })
-      dropdownItem.classList.toggle('section-list-dropdown-menu-item_active')
-    })
-  })
+  dropdownItems.forEach(item => {
+    item.addEventListener('click', (event) => {
+      dropdownButtonText.innerText = item.innerText;
+      dropdown.classList.remove('section-list-dropdown_open');
+      dropdownItems.forEach(i => {
+        i.classList.remove('section-list-dropdown-menu-item_active');
+      });
+      item.classList.add('section-list-dropdown-menu-item_active');
+
+      event.stopPropagation();
+    });
+  });
 
   return tabsInstance
 }

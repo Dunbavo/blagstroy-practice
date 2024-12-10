@@ -17,7 +17,7 @@ return [
             'id' => 'parking-spaces',
             'name' => 'Машиноместа',
             'active' => false,
-            'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
+            'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/content.php')
         ],
         [
             'id' => 'commercial-real-estate',
@@ -31,17 +31,14 @@ return [
             [
                 'id' => 'apartments',
                 'name' => 'Квартиры',
-//                'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
             ],
             [
                 'id' => 'parking-spaces',
                 'name' => 'Машиноместа',
-//                'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
             ],
             [
                 'id' => 'commercial-real-estate',
                 'name' => 'Коммерческая недвижимость',
-//                'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
             ],
         ]
     ]
