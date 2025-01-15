@@ -11,23 +11,27 @@ return [
             'id' => 'apartments',
             'name' => 'Квартиры',
             'active' => true,
-            'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
+            'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list1.php')
         ],
         [
             'id' => 'parking-spaces',
             'name' => 'Машиноместа',
             'active' => false,
-            'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/content.php')
+            'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list2.php')
         ],
         [
             'id' => 'commercial-real-estate',
             'name' => 'Коммерческая недвижимость',
             'active' => false,
-            'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list.php')
+            'content' => $mustache->render('projects-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/projects-list2.php')
         ],
     ]),
     'dropdown' => [
         'items' => [
+            [
+                'id' => 'all',
+                'name' => 'Показать все объекты',
+            ],
             [
                 'id' => 'apartments',
                 'name' => 'Квартиры',

@@ -86,18 +86,27 @@
     display: block
 
 +mq(tablet)
+  .section-list-dropdown
+    display: none
+
   .section-list-tabs
+    display: flex
     position: relative
-    font-size: 15px
-    font-weight: 700
-    line-height: 18px
-    text-transform: uppercase
-    color: $main-color50
+    font-size: 18px
+    font-weight: 500
+    line-height: 22px
+    letter-spacing: 0.03em
+    color: transparentize($black-color, .6)
     padding-bottom: 30px
 
   .section-list-tab
     cursor: pointer
-    margin-right: 20px
+    transition: $default-transition
+    border-bottom: 2px solid transparent
+    margin-right: 40px
+
+    &_active
+      border-bottom: 2px solid $yellow-color
 
   //.tabs-list
   //  margin-top: 40px
