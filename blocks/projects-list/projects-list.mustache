@@ -2,7 +2,7 @@
     <div class="projects-list">
         <div class="projects-list-items">
             {{#items}}
-                <div class="projects-list-card">
+                <div class="projects-list-card{{^chars}} projects-list-card_not-chars{{/chars}}">
                     {{#image}}
                         <div class="projects-list-card-image-wrap">
                             <div class="projects-list-card-image">
@@ -20,53 +20,53 @@
                             </div>
                         </div>
                     {{/image}}
-                    {{#content}}
-                        <div class="projects-list-card-content">
-                        <div class="projects-list-card__name">{{{name}}}</div>
-                        {{#description}}
-                            <div class="projects-list-card__description">{{{.}}}</div>
-                        {{/description}}
-                        {{#link}}
-                            <a href="{{href}}" class="projects-list-card__link">{{text}}</a>
-                        {{/link}}
-                        {{#date}}
-                            <div class="projects-list-card__release-date">
-                                {{#title}}
-                                    <div class="projects-list-card-release-date__title">{{.}}</div>
-                                {{/title}}
-                                <div class="projects-list-card-release-date__text">{{text}}</div>
+                    <div class="projects-list-card-content">
+                            <div class="projects-list-card-content-top">
+                                <div class="projects-list-card__name">{{{name}}}</div>
+                                {{#description}}
+                                    <div class="projects-list-card__description">{{{.}}}</div>
+                                {{/description}}
                             </div>
-                        {{/date}}
-                        {{#chars.address}}
-                            <div class="projects-list-card__address">{{.}}</div>
-                        {{/chars.address}}
-                        {{#chars}}
-                            <div class="projects-list-card__chars">
-                                {{#type}}
-                                    <div class="projects-list-card-chars-item">
-                                        <div class="projects-list-card-chars__title">Тип</div>
-                                        <div class="projects-list-card-chars__desc">{{{.}}}</div>
+                            <div class="projects-list-card-content-bottom">
+                                <a href="{{{link}}}" class="projects-list-card__link">Подробнее</a>
+                                {{#date}}
+                                    <div class="projects-list-card__release-date">
+                                        {{#title}}
+                                            <div class="projects-list-card-release-date__title">{{.}}</div>
+                                        {{/title}}
+                                        <div class="projects-list-card-release-date__text">{{text}}</div>
                                     </div>
-                                {{/type}}
-                                {{#price}}
-                                    <div class="projects-list-card-chars-item">
-                                        <div class="projects-list-card-chars__title">Цена</div>
-                                        <div class="projects-list-card-chars__desc">{{{.}}}
-                                            {{#squareMeter}} <span>{{{.}}}</span>{{/squareMeter}}
+                                {{/date}}
+                            </div>
+                            {{#chars.address}}
+                                <div class="projects-list-card__address">{{.}}</div>
+                            {{/chars.address}}
+                            {{#chars}}
+                                <div class="projects-list-card__chars">
+                                    {{#type}}
+                                        <div class="projects-list-card-chars-item">
+                                            <div class="projects-list-card-chars__title">Тип</div>
+                                            <div class="projects-list-card-chars__desc">{{{.}}}</div>
                                         </div>
-                                    </div>
-                                {{/price}}
-                                {{#address}}
-                                    <div class="projects-list-card-chars-item">
-                                        <div class="projects-list-card-chars__title">Адрес</div>
-                                        <div class="projects-list-card-chars__desc">{{{.}}}</div>
-                                    </div>
-                                {{/address}}
-                            </div>
-                        {{/chars}}
+                                    {{/type}}
+                                    {{#price}}
+                                        <div class="projects-list-card-chars-item">
+                                            <div class="projects-list-card-chars__title">Цена</div>
+                                            <div class="projects-list-card-chars__desc">{{{.}}}
+                                                {{#squareMeter}} <span>{{{.}}}</span>{{/squareMeter}}
+                                            </div>
+                                        </div>
+                                    {{/price}}
+                                    {{#address}}
+                                        <div class="projects-list-card-chars-item">
+                                            <div class="projects-list-card-chars__title">Адрес</div>
+                                            <div class="projects-list-card-chars__desc">{{{.}}}</div>
+                                        </div>
+                                    {{/address}}
+                                </div>
+                            {{/chars}}
                     </div>
-                    {{/content}}
-                    <a href="{{link}}" class="link-as-card"></a>
+                    <a href="{{detailPageUrl}}" class="link-as-card"></a>
                 </div>
             {{/items}}
         </div>

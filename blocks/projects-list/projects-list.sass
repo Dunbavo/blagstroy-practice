@@ -9,6 +9,8 @@
   box-shadow: 0 4px 4px 0 #00000014
 
 .projects-list-card-image-wrap
+  border-radius: 6px 6px 0 0
+  overflow: hidden
   line-height: 0
   position: relative
   padding-bottom: 81.6%
@@ -20,10 +22,14 @@
   width: 100%
   height: 100%
   object-fit: cover
-  border-radius: 6px 6px 0 0
 
 .projects-list-card-content
   padding: 25px 25px 28px
+
+.projects-list-card-content-top
+  margin-bottom: 25px
+  &:last-child
+    margin-bottom: 0
 
 .projects-list-card__description,
 .projects-list-card__link,
@@ -36,7 +42,6 @@
   font-weight: 700
   line-height: 18px
   letter-spacing: 0.02em
-  margin-bottom: 25px
 
 .projects-list-card-release-date__text,
 .projects-list-card__address
@@ -45,8 +50,8 @@
   line-height: 18px
   letter-spacing: 0.02em
 
-.projects-list-card__release-date
-  margin-bottom: 13px
+.projects-list-card__address
+  margin-top: 13px
 
 .projects-list__link
   display: inline-block
@@ -56,3 +61,89 @@
   letter-spacing: 0.05em
   border-bottom: 1px solid
   margin-top: 30px
+
++mq(tablet)
+  .projects-list-card_not-chars
+    border-radius: 6px
+    overflow: hidden
+
+    .projects-list-card-content
+      padding: 0
+
+  .projects-list-card-image-wrap
+    position: relative
+    padding-bottom: 65%
+    &:after
+      content: ''
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 106.85%)
+      +absoluteFluid
+
+  .projects-list-card-content
+    border-radius: 6px
+    overflow: hidden
+    padding: 30px 30px 34px
+
+  .projects-list-card-content-top
+    position: absolute
+    top: 47px
+    left: 28px
+    color: #FFF
+
+  .projects-list-card__name
+    font-size: 20px
+    line-height: 1em
+
+  .projects-list-card__description
+    display: block
+    font: 600 18px / 18px $default-font
+    letter-spacing: 0.02em
+    margin-top: 13px
+
+  .projects-list-card-content-bottom
+    position: absolute
+    top: 325px
+    left: 32px
+    color: #FFF
+
+  .projects-list-card__link
+    display: inline-block
+    font: 600 14px / 16px $default-font
+    letter-spacing: 0.05em
+    border-radius: 6px
+    border: 2px solid #FFF
+    padding: 14px 51px
+
+  .projects-list-card__release-date
+    margin-top: 22px
+
+  .projects-list-card-release-date__text
+    font-size: 18px
+
+  .projects-list-card__address
+    display: none
+
+  .projects-list-card__chars
+    display: flex
+    flex-direction: column
+    gap: 23px
+
+  .projects-list-card-chars-item
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, auto))
+    justify-content: left
+    gap: 37px
+
+  .projects-list-card-chars__title
+    font: 500 14px / 16px $default-font
+    letter-spacing: 0.03em
+    width: 50px
+
+  .projects-list-card-chars__desc
+    font: 600 16px / 16px $default-font
+    letter-spacing: 0.05em
+    span
+      font-size: 14px
+      margin-left: 26px
+
+  .projects-list__link
+    margin-top: 42px
