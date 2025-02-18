@@ -62,6 +62,9 @@
   border-bottom: 1px solid
   margin-top: 30px
 
+.projects-list-card-link__icon
+  display: none
+
 +mq(tablet)
   .projects-list-card_not-chars
     border-radius: 6px
@@ -147,3 +150,64 @@
 
   .projects-list__link
     margin-top: 42px
+
++mq(desktop)
+  .projects-list-items
+    grid-template-columns: repeat(7, minmax(0, 1fr))
+    gap: 24px
+
+  .projects-list-card
+    transition: $default-transition
+
+    &:nth-child(4n + 2), &:nth-child(4n + 3)
+      grid-column: span 3
+
+      .projects-list-card-image-wrap
+        padding-bottom: 90%
+
+    &:not(:nth-child(4n + 2), :nth-child(4n + 3))
+      grid-column: span 4
+
+      .projects-list-card-image-wrap
+        padding-bottom: 66.7%
+
+    &:hover
+      .projects-list-card-image-wrap
+        &:after
+          background: linear-gradient(135deg, rgba(255, 184, 0, 0.95) 50%, rgba(255, 205, 18, 0.95) 100%)
+
+      .projects-list-card-release-date__title
+        display: inline
+        width: 100%
+
+  .projects-list-card-image-wrap
+    border-radius: 6px
+    &:after
+      transition: $default-transition
+
+  .projects-list-card-content
+    z-index: 5
+    padding: 0
+
+  .projects-list-card__link
+    display: flex
+    gap: 15px
+    padding: 18px 34px
+
+  .projects-list-card-link__icon
+    display: flex
+
+  .projects-list-card__release-date
+    display: flex
+    gap: 20px
+
+  .projects-list-card-release-date__title
+    width: 0
+    transition: $default-transition
+
+  .projects-list-card-release-date__text
+    flex-shrink: 0
+
+  .projects-list-card__chars
+    display: none
+    width: 0
