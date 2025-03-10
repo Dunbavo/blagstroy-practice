@@ -185,6 +185,9 @@
       .projects-list-card-release-date__title
         margin-left: 0
 
+      .projects-list-card__chars
+        opacity: 1
+
   .projects-list-card-image-wrap
     border-radius: 6px
     &:after, &:before
@@ -202,6 +205,9 @@
     z-index: 1
     padding: 0
     +absoluteFluid
+
+  .projects-list-card__name
+    font-size: 24px
 
   .projects-list-card__link
     display: inline-flex
@@ -225,8 +231,16 @@
     margin-left: 33px
 
   .projects-list-card__chars
-    display: none
-    width: 0
+    position: absolute
+    transition: $default-transition
+    opacity: 0
+    color: #fff
+    left: 30px
+    top: 140px
+    gap: 25px
+
+  .projects-list-card-chars__title
+    font-size: 16px
 
   .projects-list__link
     transition: $default-transition
