@@ -29,16 +29,24 @@ return [
     'dropdown' => [
         'items' => [
             [
-                'id' => 'all',
-                'name' => 'Показать все объекты',
-            ],
-            [
                 'id' => 'apartments',
                 'name' => 'Квартиры',
             ],
             [
                 'id' => 'parking-spaces',
                 'name' => 'Машиноместа',
+            ],
+            [
+                'id' => 'commercial-real-estate',
+                'name' => 'Коммерческая недвижимость',
+            ],
+            [
+                'id' => 'commercial-real-estate',
+                'name' => 'Коммерческая недвижимость',
+            ],
+            [
+                'id' => 'commercial-real-estate',
+                'name' => 'Коммерческая недвижимость',
             ],
             [
                 'id' => 'commercial-real-estate',

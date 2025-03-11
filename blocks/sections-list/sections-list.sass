@@ -40,27 +40,39 @@
   align-items: center
   gap: 20px
   width: 100%
+  border-radius: 5px
+  border: 1px solid transparentize($main-color, .8)
+  box-shadow: 0 4px 40px 0 #00000012
   padding: 14px 20px 17px 23px
+
+.section-list-dropdown-button__text
+  transition: $default-transition
 
 .section-list-dropdown-button__icon
   display: flex
   transition: $default-transition
 
-.section-list-dropdown-button,
-.section-list-dropdown-menu
-  border: 1px solid transparentize($main-color, .8)
-  border-radius: 5px
-  box-shadow: 0 4px 40px 0 #00000012
-
 .section-list-dropdown-menu
   position: absolute
   opacity: 0
-  display: none
+  display: block
+  max-height: 0
   width: 100%
   z-index: 1
   background-color: #fff
+  overflow-x: hidden
+  overflow-y: scroll
+  border-radius: 5px
+  border: 1px solid transparent
   transition: $default-transition
   margin-top: 6px
+
+  &::-webkit-scrollbar
+    position: absolute
+    width: 4px
+
+  &::-webkit-scrollbar-thumb
+    background-color: $yellow-color
 
 .section-list-dropdown-menu-item
   display: flex
@@ -76,14 +88,12 @@
 
   .section-list-dropdown-menu
     opacity: 1
-    display: block
+    max-height: 240px
+    border-color: transparentize($main-color, .8)
+    box-shadow: 0 4px 40px 0 #00000012
 
   .section-list-dropdown-button-icon__rotate
     transform: rotate(180deg)
-
-  .section-list-dropdown-menu_visible
-    opacity: 1
-    display: block
 
 +mq(tablet)
   .section-list__title
@@ -114,39 +124,15 @@
     &_active
       border-bottom: 2px solid $yellow-color
 
-  //.tabs-list
-  //  margin-top: 40px
-  //
-  //.tabs-list-links
-  //  display: flex
-  //  font-size: 16px
-  //  padding-bottom: 20px
-  //
-  //.tabs-list-link
-  //  &_active
-  //    border-bottom: 2px solid $yellow-color
-  //    cursor: default
-  //
-  //.tabs-list-panel
-  //  padding-top: 25px
-
 +mq(desktop)
-  //.tabs-list
-  //  max-width: 1195px
-  //  margin-top: 50px
-  //
-  //.tabs-list-links
-  //  font-size: 18px
-  //  padding-bottom: 0
-  //  margin-right: -$co3
-  //
-  //.tabs-list-panel
-  //  padding-top: 40px
-  //
-  //.tabs-list-link:not(.tabs-list-link_active):hover
-  //  color: #FFBF06
-
   .section-list-dropdown-menu-item
     transition: $default-transition
     &:hover
       background-color: #D4DEE180
+
+  .section-list-tab
+    transition: $default-transition
+
+  .section-list-tab:not(.section-list-tab_active)
+    &:hover
+      color: $yellow-color

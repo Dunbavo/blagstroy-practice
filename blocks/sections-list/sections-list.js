@@ -23,9 +23,9 @@ export default () => {
     })
   }
 
-  const dropdown = section.querySelector('.section-list-dropdown');
-  const dropdownButtonText = section.querySelector('.section-list-dropdown-button__text');
-  const dropdownItems = section.querySelectorAll('.section-list-dropdown-menu-item');
+  const dropdown = section.querySelector('.section-list-dropdown')
+  const dropdownButtonText = section.querySelector('.section-list-dropdown-button__text')
+  const dropdownItems = section.querySelectorAll('.section-list-dropdown-menu-item')
 
   dropdown.addEventListener('click', (event) => {
     dropdown.classList.toggle('section-list-dropdown_open')
@@ -33,16 +33,28 @@ export default () => {
 
   dropdownItems.forEach(item => {
     item.addEventListener('click', (event) => {
-      dropdownButtonText.innerText = item.innerText;
-      dropdown.classList.remove('section-list-dropdown_open');
+      dropdownButtonText.innerText = item.innerText
+      dropdown.classList.remove('section-list-dropdown_open')
       dropdownItems.forEach(i => {
-        i.classList.remove('section-list-dropdown-menu-item_active');
-      });
-      item.classList.add('section-list-dropdown-menu-item_active');
+        i.classList.remove('section-list-dropdown-menu-item_active')
+      })
+      item.classList.add('section-list-dropdown-menu-item_active')
 
-      event.stopPropagation();
-    });
-  });
+      const tabId = item.dataset.tab
+      const tabLink = section.querySelector(`.section-list-tab[data-tab="${tabId}"]`)
+      if (tabLink) {
+        tabsInstance.linkClickHandler({ currentTarget: tabLink })
+      }
+
+      event.stopPropagation()
+    })
+  })
+
+  document.addEventListener('click', (event) => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove('section-list-dropdown_open')
+    }
+  })
 
   return tabsInstance
 }
