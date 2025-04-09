@@ -14,6 +14,9 @@
   opacity: 0
   visibility: hidden
 
+.form-group
+  position: relative
+
 .form-label
   display: block
   width: 100%
@@ -22,8 +25,24 @@
   z-index: 0
 
 .form__control
-  border-radius: 0
+  font-size: 16px
+  font-weight: 400
+  line-height: 16px
+  color: $main-color
+  letter-spacing: .05em
+  height: 60px
+  background-color: #fff
+  border: 1px solid transparent
+  border-radius: 4px
+  box-shadow: 0 4px 4px 0 transparentize(#000, .97)
+  transition: $default-transition
+  padding: 22px 24px
   -webkit-appearance: none
+
+  &:not(.feedback-form__control_type_datetime):focus + .form__placeholder
+    font-size: 10px
+    line-height: 12px
+    top: 5px
 
 .form__textarea
   border-radius: 0
@@ -34,18 +53,58 @@
   top: 100%
   margin-top: 4px
 
+.form__placeholder
+  position: absolute
+  left: 24px
+  top: 22px
+  font-size: 14px
+  line-height: 16px
+  font-weight: 400
+  letter-spacing: .05em
+  color: transparentize($black-color, .4)
+  pointer-events: none
+  transition: $default-transition
+
+.form-bottom
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+.form__submit
+  font-size: 16px
+  letter-spacing: .02em
+  line-height: 16px
+  color: #fff
+  border-radius: 6px
+  padding: 22px
+
+.form-checkbox__text
+  font-weight: 500
+  font-size: 12px
+  line-height: 16px
+
 .form-group_filled
   .form__placeholder
-    //
+    font-size: 10px
+    line-height: 12px
+    top: 5px
 
 .form-group_has-error
   .form__control
-    //
-  .form__placeholder
-    //
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF), linear-gradient(0deg, rgba(255, 106, 106, 0.12), rgba(255, 106, 106, 0.12))
+    border-color: transparentize(#FF6A6A, .2)
 
-.form__placeholder
-  //
+  .form__placeholder
+    color: #FF6A6A
+
++mq(tablet)
+  .form-checkbox__text
+    font-size: 16px
+
++mq(desktop)
+  .form-checkbox__text
+    font-size: 13px
+    line-height: 1em
 
 @import './form-control-select'
 @import './form-checkbox'

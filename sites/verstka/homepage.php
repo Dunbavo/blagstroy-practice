@@ -32,6 +32,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/include/header.php');
 ?>
 <div class="container">
     <?= $mustache->render('sections-list', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/sections/sections-list.php'); ?>
+    <?= $mustache->render('excursion-form', include $_SERVER['DOCUMENT_ROOT'] . '/context/homepage/excursion-form.php'); ?>
 </div>
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/include/footer.php');

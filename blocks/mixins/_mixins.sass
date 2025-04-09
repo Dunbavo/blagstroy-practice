@@ -34,6 +34,12 @@
   color: inherit
   text-transform: inherit
 
+=clearFirstLastMargin()
+  &:first-child
+    margin-top: 0
+  &:last-child
+    margin-bottom: 0
+
 =input-preset()
   font-family: $default-font
   width: 100%
